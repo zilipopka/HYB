@@ -83,18 +83,28 @@ def sign_up():
         return render_template("sign_up.html")
 
 
+@app.route('/')
+@app.route('/home')
+def home():
+    return render_template('homepage.html')
 
-@app.route('/', methods=['POST', 'GET'])
-def index():
+
+
+@app.route('/<string:token>/new_request', methods=['POST', 'GET'])
+def index(token):
     if request.method == "POST":
-        information = request.form['something']
+        information = request.form['info']
         task = f"Сейчас я опишу тебе компанию и ее деятельность. {information}. Придумай стратегию для развития этого бизнеса"
         messages = [HumanMessage(content=task)]
         response = model.invoke(messages)
         response = response.content.replace('###', '').replace('**', '')
-        return render_template('output.html', response=response)
+
+        question = Requests(question=information, answer=response, token=token)
+        db.session.add(question)
+        db.session.commit()
+        return render_template('output_2.html', response=response)
     else:
-        return render_template("index.html")
+        return render_template("index_2.html")
 
 
 @app.route('/<string:token>/requests')
@@ -120,6 +130,9 @@ def sign_in():
         return redirect(f'/{token}/requests')
     else:
         return render_template('sign_in.html')
+
+
+
 
 
 if __name__ == '__main__':
