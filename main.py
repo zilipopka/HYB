@@ -60,21 +60,16 @@ class Requests(db.Model):
 @app.route('/sign_up', methods=['POST', 'GET'])
 def sign_up():
     if request.method == "POST":
-        users = Users.query.all()
-        logins = [i.login for i in users]
-        tokens = [i.token for i in users]
-
         login = request.form['login']
-        if login in logins:
+        if Users.query.filter_by(login=login).first():
             return 'Error! This login already exists'
 
         password = request.form['password']
 
         token = generate_token()
         while True:
-            if token in tokens:
+            if Users.query.filter_by(token=token).first():
                 token = generate_token()
-
             else:
                 break
 
@@ -104,14 +99,28 @@ def index():
 
 @app.route('/<string:token>/requests')
 def requests(token):
-    requests = Requests.query.all()
-
-    your_requests = []
-    for i in requests:
-        if i.token == token:
-            your_requests.append(i)
-
+    your_requests = Requests.query.filter_by().all()
     return render_template('requests.html', requests=your_requests)
+
+
+@app.route('/sign_in', methods=['POST', 'GET'])
+def sign_in():
+    if request.method == "POST":
+        login = request.form['login']
+        password = request.form['password']
+        user = Users.query.filter_by(login=login).first()
+        if user:
+            if bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
+                token = user.token
+
+            else:
+                return 'Error! Password is wrong!'
+        else:
+            return 'Error! Such login doesnt exist'
+        return redirect(f'/{token}/requests')
+    else:
+        return render_template('sign_in.html')
+
 
 if __name__ == '__main__':
     with app.app_context():
