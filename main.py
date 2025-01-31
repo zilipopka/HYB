@@ -77,7 +77,7 @@ def sign_up():
         db.session.add(user)
         db.session.commit()
 
-        return redirect(f'/{token}/requests')
+        return redirect(f'/{token}')
 
     else:
         return render_template("sign_up.html")
@@ -127,12 +127,19 @@ def sign_in():
                 return 'Error! Password is wrong!'
         else:
             return 'Error! Such login doesnt exist'
-        return redirect(f'/{token}/requests')
+        return redirect(f'/{token}')
     else:
         return render_template('sign_in.html')
 
 
+@app.route('/<string:token>')
+def user(token):
+    return render_template('user.html', token=token)
 
+
+@app.route('/<string:token>/requests')
+def history(token):
+    return render_template('requests.html', token=token)
 
 
 if __name__ == '__main__':
