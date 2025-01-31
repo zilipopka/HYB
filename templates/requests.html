@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Requests</title>
+</head>
+<body>
+    {% if requests|length > 0 %}
+        {% for el in requests %}
+        <div>
+          <h2>{{ el.question }}</h2>
+          <h3>{{ el.answer }}</h3>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h2>No requests</h2>
+
+    {% endif %}
+</body>
+</html>

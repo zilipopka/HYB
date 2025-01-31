@@ -25,7 +25,7 @@ db = SQLAlchemy(app)
 
 
 def generate_token():
-    characters = string.ascii_letters + string.digits + string.punctuation
+    characters = string.ascii_letters + string.digits
     token = ''.join(random.choice(characters) for _ in range(50))
     return token
 
@@ -43,6 +43,18 @@ class Users(db.Model):
 
     def __repr__(self):
         return '<Users %r>' % self.id
+
+
+class Requests(db.Model):
+    __tablename__ = 'requests'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    question = db.Column(db.Text, nullable=False)
+    answer = db.Column(db.Text, nullable=False)
+    token = db.Column(db.String(200), nullable=False)
+
+    def __repr__(self):
+        return '<Requests %r>' % self.id
 
 
 @app.route('/sign_up', methods=['POST', 'GET'])
@@ -70,7 +82,7 @@ def sign_up():
         db.session.add(user)
         db.session.commit()
 
-        return redirect('/')
+        return redirect(f'/{token}/requests')
 
     else:
         return render_template("sign_up.html")
@@ -88,6 +100,18 @@ def index():
         return render_template('output.html', response=response)
     else:
         return render_template("index.html")
+
+
+@app.route('/<string:token>/requests')
+def requests(token):
+    requests = Requests.query.all()
+
+    your_requests = []
+    for i in requests:
+        if i.token == token:
+            your_requests.append(i)
+
+    return render_template('requests.html', requests=your_requests)
 
 if __name__ == '__main__':
     with app.app_context():
