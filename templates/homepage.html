@@ -10,8 +10,8 @@
 <body>
     <center><h1 class="title">You need to sign up or log in to use this service</h1></center>
     <div class="center-container">
-        <button id="sign-up-btn">Sign up</button>
-        <button id="sign-in-btn">Sign in</button>
+        <a href="{{ url_for('sign_up') }}"><button id="sign-in-btn">Sign up</button></a>
+        <a href="{{ url_for('sign_in') }}"><button id="sign-in-btn">Sign in</button></a>
     </div>
 </body>
 </html>
