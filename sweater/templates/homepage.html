@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
+
+
 <body>
-    <center><h1>You need ti sign up or log in to use this service</h1></center>
-    <a href="/sign_up">Sign up</a>
-    <a href="/sign_in">Log in</a>
+    <center><h1 class="title">You need to sign up or log in to use this service</h1></center>
+    <div class="center-container">
+        <a href="{{ url_for('sign_up') }}"><button id="sign-in-btn">Sign up</button></a>
+        <a href="{{ url_for('sign_in') }}"><button id="sign-in-btn">Sign in</button></a>
+    </div>
 </body>
 </html>
