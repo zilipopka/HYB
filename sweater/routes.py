@@ -1,5 +1,4 @@
 from langchain_core.messages import HumanMessage, SystemMessage
-
 from flask import Flask, render_template, request, redirect
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
@@ -51,16 +50,16 @@ def index():
         question = Requests(question=information, answer=response, token=current_user.token)
         db.session.add(question)
         db.session.commit()
-        return render_template('main.html', response=response)
+        return render_template('output.html', response=response)
     else:
-        return render_template("main.html")
+        return render_template("index.html")
 
 
 @app.route('/requests')
 @login_required
 def requests():
     your_requests = Requests.query.filter_by(token=current_user.token).all()
-    return render_template('main.html', requests=your_requests)
+    return render_template('requests.html', requests=your_requests)
 
 
 @app.route('/sign_in', methods=['POST', 'GET'])
@@ -87,7 +86,7 @@ def sign_in():
 @app.route('/user')
 @login_required
 def user():
-    return render_template('main.html')
+    return render_template('user.html')
 
 
 @app.route('/logout')

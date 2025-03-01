@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help Your Business</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+<div class="chat-window">
+    <div class="message bot typing-effect" id="additional-message">{{ response }}</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const responseMessage = document.getElementById('response-message');
+        const additionalMessage = document.getElementById('additional-message');
+
+
+        responseMessage.addEventListener('animationend', function() {
+            responseMessage.style.borderRight = 'none';
+            additionalMessage.style.display = 'block';
+            additionalMessage.classList.add('typing-effect');
+        });
+    });
+  </script>
+</body>
+</html>

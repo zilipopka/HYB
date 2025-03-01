@@ -11,27 +11,10 @@
     <h1><label><center>Поможем Вашему бизнесу через готовую стратегию</center></label></h1>
     <p>
         <textarea class="textarea" name="info" id="info" rows="10" placeholder="Введите свой запрос"></textarea>
-        <input type="submit" class="button is-primary is-medium" value="Отправить">
+        <center><input type="submit" class="button is-primary is-medium" value="Отправить"></center>
     </p>
     </div>
   </form>
-  <div class="chat-window">
-    <div class="message bot typing-effect" id="additional-message">{{ response }}</div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const responseMessage = document.getElementById('response-message');
-        const additionalMessage = document.getElementById('additional-message');
-
-        // Удаляем анимацию после завершения
-        responseMessage.addEventListener('animationend', function() {
-            responseMessage.style.borderRight = 'none';
-            additionalMessage.style.display = 'block';
-            additionalMessage.classList.add('typing-effect');
-        });
-    });
-  </script>
-
+  
 </body>
 </html>
