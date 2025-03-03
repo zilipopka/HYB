@@ -1,5 +1,8 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
+body{
+    background-color: #00061c;
+}
 .center-container {
     display: flex;
     justify-content: center; /* Горизонтальное центрирование */
