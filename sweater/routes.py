@@ -50,9 +50,9 @@ def index():
         question = Requests(question=information, answer=response, token=current_user.token)
         db.session.add(question)
         db.session.commit()
-        return render_template('output.html', response=response)
+        return render_template('index.html', response=response)
     else:
-        return render_template("index.html")
+        return render_template("output.html")
 
 
 @app.route('/requests')
