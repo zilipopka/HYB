@@ -8,10 +8,12 @@
 
 
 <body>
-    <center><h1 class="title">Авторизируйтесь, чтобы воспользоваться сервисом</h1></center>
+    <div class="reg">
+        <center><h1 class="title">Авторизируйтесь, чтобы воспользоваться сервисом</h1></center>
+    </div>
     <div class="center-container">
-        <a href="{{ url_for('sign_up') }}"><button id="sign-in-btn">Регистрация</button></a>
-        <a href="{{ url_for('sign_in') }}"><button id="sign-in-btn">Вход</button></a>
+        <a href="{{ url_for('sign_up') }}"><button class="button is-link is-medium" id="sign-in-btn">Регистрация</button></a>
+        <a href="{{ url_for('sign_in') }}"><button class="button is-link is-medium" id="sign-in-btn">Вход</button></a>
     </div>
 </body>
 </html>

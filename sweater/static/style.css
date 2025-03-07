@@ -1,7 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
 
 body{
-    background-color: #00061c;
+    background-color: #ffffff;
 }
 .center-container {
     display: flex;
@@ -18,14 +18,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
-#sign-up-btn {
-    background-color: #ffffff;
-    color: black;
-}
-#sign-in-btn {
-    background-color: #ffffff;
-    color: black;
-}
+
 .left-panel {
     position: fixed;
     top: 0;
@@ -88,6 +81,10 @@ button {
     font-family: monospace;
     animation: typing 3.5s steps(40, end),
             blink-caret .75s step-end infinite;
+}
+
+.reg{
+    padding-top: 100px;
 }
 
 @keyframes typing {
