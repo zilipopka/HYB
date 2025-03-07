@@ -7,8 +7,14 @@
 </head>
 
 <body>
-<div class="chat-window">
-    <div class="message bot typing-effect" id="additional-message">{{ response }}</div>
+  <div class="chat-window">
+    <div class="content">
+      <h2>{{ response }}</h2>
+    </div>
+  </div>
+  <div class="center-container">
+    <a class="button is-primary is-large" href="{{ url_for('index') }}">Новый запрос</a>
+    <a class="button is-primary is-large" href="{{ url_for('requests') }}">История запросов</a>
   </div>
 
   <script>
