@@ -3,32 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Help Your Business</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}" />
 </head>
-
 <body>
-  <div class="chat-window">
+  <form action="" method="post">
     <div class="content">
-      <h2>{{ response }}</h2>
+        <h1 class="title">Разработаем стратегию для вашего бизнеса. Расскажите о проблеме или сфере деятельности — и мы предложим готовое решение.</h1>    <p>
+        <center><textarea class="textarea" name="info" id="info" rows="10" placeholder="Введите свой запрос"></textarea></center>
+        <center><input type="submit" class="button" value="Отправить"></center>
+    </p>
     </div>
-  </div>
-  <div class="center-container">
-    <a class="button is-primary is-large" href="{{ url_for('index') }}">Новый запрос</a>
-    <a class="button is-primary is-large" href="{{ url_for('requests') }}">История запросов</a>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const responseMessage = document.getElementById('response-message');
-        const additionalMessage = document.getElementById('additional-message');
-
-
-        responseMessage.addEventListener('animationend', function() {
-            responseMessage.style.borderRight = 'none';
-            additionalMessage.style.display = 'block';
-            additionalMessage.classList.add('typing-effect');
-        });
-    });
-  </script>
+  </form>
+  
 </body>
 </html>

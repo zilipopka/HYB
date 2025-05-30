@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Help Your Business</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_style.css') }}" />
 </head>
 <body>
-    <div class="content">
-        <center><h1>HYB</h1></center>
-        <center><h1>помощь Вашему бизнесу</h1></center>
+    <div class="reg">
+        <div class="content">
+            <center><h1>HYB</h1></center>
+            <p class="script">Вы успешно вошли в систему!</p>
+            <p class="script">Опишите проблему с которой вы сталкиваетесь при ведении бизнеса и наш ИИ-помощник подскажет что делать!</p>
+        </div>
+        <div id="req">
+            <a href="{{ url_for('index') }}"><button class="button_req">Новый запрос</button></a>
+            <a href="{{ url_for('requests') }}"><button class="button_req">История запросов</button></a>
+        </div>
     </div>
-    <div class="center-container">
-        <a class="button is-primary is-large" href="{{ url_for('index') }}">Новый запрос</a>
-        <a class="button is-primary is-large" href="{{ url_for('requests') }}">История запросов</a>
-    </div>
+    
 
 </body>
 </html>

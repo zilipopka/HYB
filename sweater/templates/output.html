@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Help Your Business</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='output_style.css') }}" />
 </head>
+
 <body>
-  <form action="" method="post">
-    <div class="content">
-      <div class="reg">
-        <h1><label><center>Поможем Вашему бизнесу через готовую стратегию</center></label></h1>
-      </div>
-    <p>
-        <textarea class="textarea" name="info" id="info" rows="10" placeholder="Введите свой запрос"></textarea>
-        <center><input type="submit" class="button is-primary is-medium" value="Отправить"></center>
-    </p>
-    </div>
-  </form>
-  
+  <div class="chat-window">
+    <h1>Результат:</h1>
+    <h2>{{ response }}</h2>
+  </div>
+  <div class="center-container">
+    <a class="button" href="{{ url_for('index') }}">Новый запрос</a>
+    <a class="button" href="{{ url_for('requests') }}">История запросов</a>
+  </div>
 </body>
 </html>

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+body{
+    background: linear-gradient(to right, #c2e59c, #64b3f4);
+    height: 100vh;
+    justify-content: center;
+    font-family: "Unbounded", sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.content{
+    margin: 40px 3%;
+    width: 90%;
+    height: auto;
+    padding: 2%;
+    background: white;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 255, 0.5);
+    border-radius: 15px;
+}
+
+h1{
+    color: white;
+}

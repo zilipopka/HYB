@@ -72,4 +72,3 @@ class Requests(db.Model):
 
     def __repr__(self):
         return '<Requests %r>' % self.id
-

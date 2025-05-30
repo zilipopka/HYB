@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Help Your Business</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}" />
 </head>
 
 
-<body>
-    <div class="reg">
-        <center><h1 class="title">Авторизируйтесь, чтобы воспользоваться сервисом</h1></center>
+<body class="homepage">
+    <div class="container">
+        <img src="{{ url_for('static', filename='ofice.jfif') }}" class="bg-image">
+        <div id="back"></div>
+
+        <div class="first">
+            <p class="big">Help</p>
+            <p class="big">Your</p>
+            <p class="big">Business</p>
+            <p class="sign">Лучший помощник для бизнеза</p>
+        </div>
+
+        <div id="footer">
+            <a href="{{ url_for('sign_in') }}"><button class="button" id="sign-in-btn">Вход</button></a>
+            <a href="{{ url_for('sign_up') }}"><button class="button" id="sign-in-btn">Регистрация</button></a>
+        </div>
     </div>
-    <div class="center-container">
-        <a href="{{ url_for('sign_up') }}"><button class="button is-link is-medium" id="sign-in-btn">Регистрация</button></a>
-        <a href="{{ url_for('sign_in') }}"><button class="button is-link is-medium" id="sign-in-btn">Вход</button></a>
-    </div>
+
+
 </body>
 </html>

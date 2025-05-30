@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+body{
+    background: linear-gradient(to right, #c2e59c, #64b3f4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Unbounded", sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.reg{
+    width: 80vh;
+    height: 65vh;
+    background: white;
+    
+    border-radius: 30px;
+
+    margin: 150px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 255, 0.5);
+
+}
+
+.title{
+    text-align: center;
+    font-size: 26px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+
+.field{
+    font-size: 14px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.input{
+    width: 60vh;
+    height: 30px;
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-family: "Unbounded", sans-serif;
+    margin-right: 40px;
+}
+
+.button{
+    margin: 8px;
+    width: 150px;
+    height: 50px;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 5px solid blue;
+    font-family: "Unbounded", sans-serif;
+    text-decoration: none;
+}
+
+.button:hover{
+    background: #34edbc;
+    color: black;
+    cursor: pointer;
+    border:5px solid #34edbc;
+}
+
+#in{
+    margin-top: 50px;
+}
+
+.script{
+    margin: 20px 30px;
+    font-size: 20px;
+}
+
+#req{
+    margin-top: 70px;
+    margin-left: 70px;
+}
+
+.button_req{
+    width: 200px;
+    height: 65px;
+    background: blue;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 5px solid blue;
+    font-family: "Unbounded", sans-serif;
+    text-decoration: none;
+    float: left;
+    margin-right: 20px;
+}
+
+.button_req:hover{
+    background: #34edbc;
+    color: black;
+    cursor: pointer;
+    border:5px solid #34edbc;
+}
+

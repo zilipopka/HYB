@@ -3,38 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Help Your Business</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_style.css') }}" />
 </head>
-
-<style>
-    form {
-        display: flex;
-        gap: 10px;
-        padding-top: 300px;
-        padding-left: 400px;
-    }
-    label, input {
-        display: inline-block;
-    }
-</style>
 
 <body>
     <div class="reg">
-        <center><h1 class="title">Вход</h1></center>
-    </div>
-    <form action="" method="post">
-        <h2 class="subtitle">Логин:</h2>
-        <div style="width: 200px; height:150px;">
+        <h1 class="title">Вход</h1>
+
+        <form action="" method="post">
+        
+        <div class="field">
+            <h2 class="subtitle">Логин:</h2>
             <input class="input" type="text" placeholder="Enter" name="login" />
         </div>
 
-        <h2 class="subtitle">Пароль:</h2>
-        <div style="width: 200px; height:150px;">
+        <div class="field">
+            <h2 class="subtitle">Пароль:</h2>
             <input class="input" type="text" placeholder="Enter" name="password" />
         </div> 
         
-        <center><input class="button" type="submit" value="Отправить" /></center>
+        <center><input class="button" id="in" type="submit" value="Отправить" /></center>
         
     </form>
+    </div>
 </body>
 </html>

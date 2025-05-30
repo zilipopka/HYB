@@ -1,5 +1,5 @@
 from sweater import *
-from routes import *
+from sweater.routes import *
 
 
 if __name__ == '__main__':

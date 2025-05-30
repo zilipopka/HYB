@@ -12,6 +12,14 @@ def sign_up():
             return 'Error! This login already exists'
 
         password = request.form['password']
+        check_password = request.form['check_password']
+
+        if password != check_password:
+            return 'Passwords are not the same!'
+
+        if password == '' or login == '':
+            return 'Field is empty!'
+
 
         token = generate_token()
         while True:
@@ -50,9 +58,9 @@ def index():
         question = Requests(question=information, answer=response, token=current_user.token)
         db.session.add(question)
         db.session.commit()
-        return render_template('index.html', response=response)
+        return render_template('output.html', response=response)
     else:
-        return render_template("output.html")
+        return render_template("index.html")
 
 
 @app.route('/requests')
